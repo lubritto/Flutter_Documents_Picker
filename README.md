@@ -9,10 +9,11 @@ For help getting started with Flutter, view our online
 
 For help on editing plugin code, view the [documentation](https://flutter.io/platform-plugins/#edit-code).
 
-# How to use
+## How to use
 
 You need to put these styles to plugin works
 
+```sh
   <style name="LibAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
       <!-- Customize your theme here. -->
       <item name="colorPrimary">@color/colorPrimary</item>
@@ -34,6 +35,7 @@ You need to put these styles to plugin works
       <item name="color_unchecked_stroke">@color/checkbox_unchecked_color</item>
       <item name="color_tick">@android:color/white</item>
   </style>
+```
   
 For use, just
 
