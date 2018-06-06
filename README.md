@@ -2,6 +2,8 @@
 
 A new Flutter plugin to get documents.
 
+**This Plugin is under development, but alredy works in IOS and Android**
+
 ## Getting Started
 
 For help getting started with Flutter, view our online
