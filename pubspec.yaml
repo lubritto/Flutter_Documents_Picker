@@ -1,6 +1,6 @@
 name: documents_picker
 description: A new Flutter plugin to get documents.
-version: 0.0.1
+version: 0.0.2
 author: Lucas Britto <l_demello@hotmail.com>
 homepage: https://github.com/lubritto/Flutter_Documents_Picker
 
@@ -18,5 +18,4 @@ flutter:
     pluginClass: DocumentsPickerPlugin
 
 environment:
-  sdk: ">=2.0.0-dev.28.0 <3.0.0"
-  flutter: ">=0.1.4 <2.0.0"
+  sdk: ">=1.19.0 <3.0.0"

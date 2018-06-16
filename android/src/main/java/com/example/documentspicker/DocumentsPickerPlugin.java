@@ -60,10 +60,12 @@ public class DocumentsPickerPlugin implements MethodCallHandler, PluginRegistry.
     if (requestCode == FilePickerConst.REQUEST_CODE_DOC){
       if (intent != null)
         docPaths = intent.getStringArrayListExtra(FilePickerConst.KEY_SELECTED_DOCS);
+    
+      this.result.success(docPaths);
+
+      return true;
     }
 
-    this.result.success(docPaths);
-
-    return true;
+    return false;
   }
 }
