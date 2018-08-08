@@ -1,11 +1,16 @@
 package com.example.documentspicker;
 
 import java.util.ArrayList;
+import android.Manifest;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 
 import droidninja.filepicker.FilePickerBuilder;
 import droidninja.filepicker.FilePickerConst;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
 
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
@@ -38,17 +43,21 @@ public class DocumentsPickerPlugin implements MethodCallHandler, PluginRegistry.
     registrar.addActivityResultListener(plugin);
   }
 
+  private static final int REQUEST_READ_PERMISSION = 786;
+
 
   @Override
   public void onMethodCall(MethodCall call, Result result) {
     if (call.method.equals("pickDocuments")) {
 
-      this.result = result;
-      FilePickerBuilder.getInstance().setMaxCount(10)
-              .setActivityTheme(R.style.LibAppTheme)
-              .pickFile(activity);
-
-
+      if (ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_READ_PERMISSION);
+      } else {
+        this.result = result;
+        FilePickerBuilder.getInstance().setMaxCount(1)
+                .setActivityTheme(R.style.LibAppTheme)
+                .pickFile(activity);
+      }
     } else {
       result.notImplemented();
     }
