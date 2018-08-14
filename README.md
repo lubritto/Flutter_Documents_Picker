@@ -13,7 +13,7 @@ For help on editing plugin code, view the [documentation](https://flutter.io/pla
 
 ## How to use
 
-You need to put these styles to plugin works
+You need to add these styles to the android app (app/src/main/values/styles.xml) so the plugin works.
 
 ```sh
   <style name="LibAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
