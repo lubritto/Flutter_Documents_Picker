@@ -36,14 +36,6 @@
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
-    if (_result) {
-        _result([FlutterError errorWithCode:@"multiple_request"
-                                    message:@"Cancelled by a second request"
-                                    details:nil]);
-        _result = nil;
-    }
-
-
   if ([@"pickDocuments" isEqualToString:call.method]) {
 
       _pickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
